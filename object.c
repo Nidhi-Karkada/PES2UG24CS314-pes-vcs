@@ -87,7 +87,7 @@ int object_write(ObjectType type, const void *data, size_t len, ObjectID *id_out
     char shard_dir[512];
     snprintf(shard_dir, sizeof(shard_dir), "%s/%.2s", OBJECTS_DIR, hex);
     mkdir(shard_dir, 0755);
-/*
+
     // 5-7. Write atomically (temp file -> rename)
     object_path(id_out, path, sizeof(path));
     char temp_path[512];
@@ -108,7 +108,7 @@ int object_write(ObjectType type, const void *data, size_t len, ObjectID *id_out
     if (rename(temp_path, path) < 0) {
         unlink(temp_path); free(full_obj); return -1;
     }
-
+/*
     // 8. Sync directory to persist rename
     int dir_fd = open(shard_dir, O_RDONLY);
     if (dir_fd >= 0) {

@@ -62,7 +62,7 @@ int index_load(Index *index) {
     fclose(f);
     return 0;
 }
-/*
+
 int index_save(const Index *index) {
     // 1. Sort entries by path
     Index sorted_idx = *index;
@@ -75,7 +75,7 @@ int index_save(const Index *index) {
 
     FILE *f = fdopen(fd, "w");
     if (!f) { close(fd); return -1; }
-
+/*
     // 3. Write entries
     for (int i = 0; i < sorted_idx.count; i++) {
         const IndexEntry *e = &sorted_idx.entries[i];

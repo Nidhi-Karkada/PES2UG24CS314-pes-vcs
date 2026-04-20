@@ -98,7 +98,7 @@ int index_save(const Index *index) {
 
     return 0;
 }
-/*
+
 int index_add(Index *index, const char *path) {
     struct stat st;
     if (stat(path, &st) != 0) return -1;
@@ -120,7 +120,7 @@ int index_add(Index *index, const char *path) {
         free(data); return -1;
     }
     free(data);
-
+/*
     // 3. Update index entry
     IndexEntry *e = index_find(index, path);
     if (!e) {

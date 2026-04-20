@@ -204,7 +204,7 @@ int commit_create(const char *message, ObjectID *commit_id_out) {
         return -1;
     }
 
-/*    // 2. Try to find a parent commit (the current HEAD)
+    // 2. Try to find a parent commit (the current HEAD)
     // If head_read fails, it's just the first commit (no parent).
     if (head_read(&c.parent) == 0) {
         c.has_parent = 1;
@@ -218,7 +218,7 @@ int commit_create(const char *message, ObjectID *commit_id_out) {
     c.timestamp = (uint64_t)time(NULL);
     snprintf(c.message, sizeof(c.message), "%s", message);
 
-    // 4. Serialize the commit struct into a text buffer
+/*    // 4. Serialize the commit struct into a text buffer
     void *data = NULL;
     size_t len = 0;
     if (commit_serialize(&c, &data, &len) != 0) {

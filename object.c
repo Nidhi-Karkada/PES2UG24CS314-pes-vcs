@@ -72,9 +72,9 @@ int object_write(ObjectType type, const void *data, size_t len, ObjectID *id_out
     memcpy(full_obj, header, header_len);
     memcpy(full_obj + header_len, data, len);
 
-/*    // 2. Compute SHA-256 of FULL object
+    // 2. Compute SHA-256 of FULL object
     compute_hash(full_obj, full_len, id_out);
-
+/*
     // 3. Deduplication
     if (object_exists(id_out)) {
         free(full_obj);

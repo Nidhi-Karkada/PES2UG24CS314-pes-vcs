@@ -120,7 +120,7 @@ int index_add(Index *index, const char *path) {
         free(data); return -1;
     }
     free(data);
-/*
+
     // 3. Update index entry
     IndexEntry *e = index_find(index, path);
     if (!e) {
@@ -136,4 +136,4 @@ int index_add(Index *index, const char *path) {
 
     return index_save(index);
 }
-*/
+

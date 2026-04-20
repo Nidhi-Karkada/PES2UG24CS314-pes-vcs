@@ -218,14 +218,14 @@ int commit_create(const char *message, ObjectID *commit_id_out) {
     c.timestamp = (uint64_t)time(NULL);
     snprintf(c.message, sizeof(c.message), "%s", message);
 
-/*    // 4. Serialize the commit struct into a text buffer
+    // 4. Serialize the commit struct into a text buffer
     void *data = NULL;
     size_t len = 0;
     if (commit_serialize(&c, &data, &len) != 0) {
         return -1;
     }
 
-    // 5. Write the commit object to the store
+/*    // 5. Write the commit object to the store
     if (object_write(OBJ_COMMIT, data, len, commit_id_out) != 0) {
         free(data);
         return -1;

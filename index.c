@@ -75,7 +75,7 @@ int index_save(const Index *index) {
 
     FILE *f = fdopen(fd, "w");
     if (!f) { close(fd); return -1; }
-/*
+
     // 3. Write entries
     for (int i = 0; i < sorted_idx.count; i++) {
         const IndexEntry *e = &sorted_idx.entries[i];
@@ -98,7 +98,7 @@ int index_save(const Index *index) {
 
     return 0;
 }
-
+/*
 int index_add(Index *index, const char *path) {
     struct stat st;
     if (stat(path, &st) != 0) return -1;

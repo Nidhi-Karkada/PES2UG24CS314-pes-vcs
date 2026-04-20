@@ -225,14 +225,14 @@ int commit_create(const char *message, ObjectID *commit_id_out) {
         return -1;
     }
 
-/*    // 5. Write the commit object to the store
+    // 5. Write the commit object to the store
     if (object_write(OBJ_COMMIT, data, len, commit_id_out) != 0) {
         free(data);
         return -1;
     }
     free(data);
 
-    // 6. Update HEAD to point to this new commit
+/*    // 6. Update HEAD to point to this new commit
     if (head_update(commit_id_out) != 0) {
         fprintf(stderr, "error: failed to update HEAD\n");
         return -1;

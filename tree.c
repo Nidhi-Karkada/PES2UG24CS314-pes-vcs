@@ -187,7 +187,7 @@ static int recursive_build(IndexEntry *entries, int count, const char *prefix, O
     // Serialize and write this tree object
     void *buffer;
     size_t len;
-    if (tree_serialize(&tree, &buffer, &len) != 0) return -1;
+  //  if (tree_serialize(&tree, &buffer, &len) != 0) return -1;
     if (object_write(OBJ_TREE, buffer, len, id_out) != 0) {
         free(buffer);
         return -1;
@@ -201,7 +201,7 @@ int tree_from_index(ObjectID *id_out) {
     // (See Lab Appendix for logical steps)
     Index idx;
     if (index_load(&idx) != 0) return -1;
-/*    
+    
     // Sort index entries by path to make grouping easier
     // (index_load already handles basic loading, but we need consistency)
     
@@ -210,5 +210,5 @@ int tree_from_index(ObjectID *id_out) {
         return -1;
     }
 
-    return recursive_build(idx.entries, idx.count, "", id_out);
-*/}
+//    return recursive_build(idx.entries, idx.count, "", id_out);
+}

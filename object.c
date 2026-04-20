@@ -108,14 +108,14 @@ int object_write(ObjectType type, const void *data, size_t len, ObjectID *id_out
     if (rename(temp_path, path) < 0) {
         unlink(temp_path); free(full_obj); return -1;
     }
-/*
+
     // 8. Sync directory to persist rename
     int dir_fd = open(shard_dir, O_RDONLY);
     if (dir_fd >= 0) {
         fsync(dir_fd);
         close(dir_fd);
     }
-*/
+
     free(full_obj);
     return 0;
 }

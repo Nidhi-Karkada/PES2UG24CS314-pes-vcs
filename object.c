@@ -74,7 +74,7 @@ int object_write(ObjectType type, const void *data, size_t len, ObjectID *id_out
 
     // 2. Compute SHA-256 of FULL object
     compute_hash(full_obj, full_len, id_out);
-/*
+
     // 3. Deduplication
     if (object_exists(id_out)) {
         free(full_obj);
@@ -87,7 +87,7 @@ int object_write(ObjectType type, const void *data, size_t len, ObjectID *id_out
     char shard_dir[512];
     snprintf(shard_dir, sizeof(shard_dir), "%s/%.2s", OBJECTS_DIR, hex);
     mkdir(shard_dir, 0755);
-
+/*
     // 5-7. Write atomically (temp file -> rename)
     object_path(id_out, path, sizeof(path));
     char temp_path[512];

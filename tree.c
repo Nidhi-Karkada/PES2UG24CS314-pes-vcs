@@ -187,7 +187,7 @@ static int recursive_build(IndexEntry *entries, int count, const char *prefix, O
     // Serialize and write this tree object
     void *buffer;
     size_t len;
-  //  if (tree_serialize(&tree, &buffer, &len) != 0) return -1;
+    if (tree_serialize(&tree, &buffer, &len) != 0) return -1;
     if (object_write(OBJ_TREE, buffer, len, id_out) != 0) {
         free(buffer);
         return -1;

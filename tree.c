@@ -210,5 +210,5 @@ int tree_from_index(ObjectID *id_out) {
         return -1;
     }
 
-//    return recursive_build(idx.entries, idx.count, "", id_out);
+    return recursive_build(idx.entries, idx.count, "", id_out);
 }
